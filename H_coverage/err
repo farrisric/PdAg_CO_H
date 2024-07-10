@@ -1,0 +1,128 @@
+Traceback (most recent call last):
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 105, in <module>
+    op_selector = OperationSelector(*soclist)
+  File "/home/g15farris/.conda/envs/farris/lib/python3.9/site-packages/ase/ga/offspring_creator.py", line 77, in __init__
+    assert len(probabilities) == len(oplist)
+AssertionError
+Traceback (most recent call last):
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 105, in <module>
+    op_selector = OperationSelector(*soclist)
+  File "/home/g15farris/.conda/envs/farris/lib/python3.9/site-packages/ase/ga/offspring_creator.py", line 77, in __init__
+    assert len(probabilities) == len(oplist)
+AssertionError
+Traceback (most recent call last):
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 105, in <module>
+    op_selector = OperationSelector(*soclist)
+  File "/home/g15farris/.conda/envs/farris/lib/python3.9/site-packages/ase/ga/offspring_creator.py", line 77, in __init__
+    assert len(probabilities) == len(oplist)
+AssertionError
+Traceback (most recent call last):
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 105, in <module>
+    op_selector = OperationSelector(*soclist)
+  File "/home/g15farris/.conda/envs/farris/lib/python3.9/site-packages/ase/ga/offspring_creator.py", line 77, in __init__
+    assert len(probabilities) == len(oplist)
+AssertionError
+Traceback (most recent call last):
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 105, in <module>
+    op_selector = OperationSelector(*soclist)
+  File "/home/g15farris/.conda/envs/farris/lib/python3.9/site-packages/ase/ga/offspring_creator.py", line 77, in __init__
+    assert len(probabilities) == len(oplist)
+AssertionError
+Traceback (most recent call last):
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 105, in <module>
+    op_selector = OperationSelector(*soclist)
+  File "/home/g15farris/.conda/envs/farris/lib/python3.9/site-packages/ase/ga/offspring_creator.py", line 77, in __init__
+    assert len(probabilities) == len(oplist)
+AssertionError
+Traceback (most recent call last):
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 105, in <module>
+    op_selector = OperationSelector(*soclist)
+  File "/home/g15farris/.conda/envs/farris/lib/python3.9/site-packages/ase/ga/offspring_creator.py", line 77, in __init__
+    assert len(probabilities) == len(oplist)
+AssertionError
+Traceback (most recent call last):
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 105, in <module>
+    op_selector = OperationSelector(*soclist)
+  File "/home/g15farris/.conda/envs/farris/lib/python3.9/site-packages/ase/ga/offspring_creator.py", line 77, in __init__
+    assert len(probabilities) == len(oplist)
+AssertionError
+Traceback (most recent call last):
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 133, in <module>
+    run(atoms, 20000, op_selector, ocp_calc)
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 72, in run
+    atoms, energy_step = trial_step(atoms, operator, calc, traj_out)
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 60, in trial_step
+    if _acceptance_condition(potential_diff):
+TypeError: _acceptance_condition() missing 1 required positional argument: 'potential_diff'
+Traceback (most recent call last):
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 133, in <module>
+    run(atoms, 20000, op_selector, ocp_calc)
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 72, in run
+    atoms, energy_step = trial_step(atoms, operator, calc, traj_out)
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 60, in trial_step
+    if _acceptance_condition(potential_diff):
+TypeError: _acceptance_condition() missing 1 required positional argument: 'potential_diff'
+Traceback (most recent call last):
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 133, in <module>
+    run(atoms, 20000, op_selector, ocp_calc)
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 72, in run
+    atoms, energy_step = trial_step(atoms, operator, calc, traj_out)
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 60, in trial_step
+    if _acceptance_condition(potential_diff):
+TypeError: _acceptance_condition() missing 1 required positional argument: 'potential_diff'
+Traceback (most recent call last):
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 133, in <module>
+    run(atoms, 20000, op_selector, ocp_calc)
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 72, in run
+    atoms, energy_step = trial_step(atoms, operator, calc, traj_out)
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 60, in trial_step
+    if _acceptance_condition(potential_diff):
+TypeError: _acceptance_condition() missing 1 required positional argument: 'potential_diff'
+Traceback (most recent call last):
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 133, in <module>
+    run(atoms, 20000, op_selector, ocp_calc)
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 72, in run
+    atoms, energy_step = trial_step(atoms, operator, calc, traj_out)
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 60, in trial_step
+    if _acceptance_condition(potential_diff):
+TypeError: _acceptance_condition() missing 1 required positional argument: 'potential_diff'
+Traceback (most recent call last):
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 133, in <module>
+    run(atoms, 20000, op_selector, ocp_calc)
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 72, in run
+    atoms, energy_step = trial_step(atoms, operator, calc, traj_out)
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 60, in trial_step
+    if _acceptance_condition(potential_diff):
+TypeError: _acceptance_condition() missing 1 required positional argument: 'potential_diff'
+Traceback (most recent call last):
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 133, in <module>
+    run(atoms, 20000, op_selector, ocp_calc)
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 72, in run
+    atoms, energy_step = trial_step(atoms, operator, calc, traj_out)
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 60, in trial_step
+    if _acceptance_condition(potential_diff):
+TypeError: _acceptance_condition() missing 1 required positional argument: 'potential_diff'
+Traceback (most recent call last):
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 133, in <module>
+    run(atoms, 20000, op_selector, ocp_calc)
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 72, in run
+    atoms, energy_step = trial_step(atoms, operator, calc, traj_out)
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 60, in trial_step
+    if _acceptance_condition(potential_diff):
+TypeError: _acceptance_condition() missing 1 required positional argument: 'potential_diff'
+Traceback (most recent call last):
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 133, in <module>
+    run(atoms, 20000, op_selector, ocp_calc)
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 72, in run
+    atoms, energy_step = trial_step(atoms, operator, calc, traj_out)
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 60, in trial_step
+    if _acceptance_condition(potential_diff):
+TypeError: _acceptance_condition() missing 1 required positional argument: 'potential_diff'
+Traceback (most recent call last):
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 133, in <module>
+    run(atoms, 20000, op_selector, ocp_calc)
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 72, in run
+    atoms, energy_step = trial_step(atoms, operator, calc, traj_out)
+  File "/home/g15farris/AdsGO/PdAg_CO_H/H_coverage/coverage.py", line 60, in trial_step
+    if _acceptance_condition(potential_diff):
+TypeError: _acceptance_condition() missing 1 required positional argument: 'potential_diff'
