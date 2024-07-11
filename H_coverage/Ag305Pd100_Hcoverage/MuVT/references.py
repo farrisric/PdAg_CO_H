@@ -18,3 +18,5 @@ def get_references():
     
     return {'NP':NP, 'H2':H2}
 
+print(get_references())
+
