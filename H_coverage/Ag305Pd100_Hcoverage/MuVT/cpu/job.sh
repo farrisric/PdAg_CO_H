@@ -1,5 +1,5 @@
 #!/bin/bash
-#$ -N coverage_EMT
+#$ -N coverage_MACE
 #$ -pe smp* 1
 #$ -q iqtc12.q
 #$ -S /bin/bash
@@ -23,4 +23,4 @@ unset __conda_setup
 export PYTHONPATH=/home/g15farris/NanoParticleLibrary/:/home/g15farris/Scripts/VaspAnalysis:$PYTHONPATH
 conda activate farris
 export OMP_NUM_THREADS=1
-python coverage_EMT.py
+python coverage_MACE.py

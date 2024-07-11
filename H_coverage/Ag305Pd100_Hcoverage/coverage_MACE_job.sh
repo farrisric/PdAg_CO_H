@@ -1,11 +1,12 @@
 #!/bin/bash
-#$ -N coverage
-#$ -pe smp* 1
-#$ -q iqtc12.q
+#$ -N coverage_MACE
+#$ -pe smp 1
+#$ -l iqtcgpu=1
+#$ -q iqtc10.q
 #$ -S /bin/bash
 #$ -cwd
-#$ -o out
-#$ -e err
+#$ -o coverage_MACE.out
+#$ -e coverage_MACE.err
 #$ -m e
 #$ -M farrisric@outlook.com
 . /etc/profile
@@ -20,7 +21,7 @@ export PATH="/aplic/anaconda/2020.02/bin:$PATH"
 fi
 fi
 unset __conda_setup
-export PYTHONPATH=/home/g15farris/NanoParticleLibrary/:/home/g15farris/Scripts/VaspAnalysis:$PYTHONPATH
+export CUDA_VISIBLE_DEVICES=`cat $TMPDIR/.gpus`
 conda activate farris
 export OMP_NUM_THREADS=1
-python coverage.py 28
+python coverage_MACE.py

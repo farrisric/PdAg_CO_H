@@ -24,9 +24,11 @@ import numpy as np
 import random
 from ase.units import kB as boltzmann_constant
 from mace.calculators import mace_mp
+import torch
 
+cuda = torch.cuda.current_device()
 temperature = 50
-calculator = EMT()
+calculator =  mace_mp(model="/work/g15farris/2023-12-03-mace-128-L1_epoch-199.model", device=cuda)
 
 def _acceptance_condition(potential_diff: float) -> bool:
     if potential_diff <= 0:
@@ -62,17 +64,11 @@ def trial_step(atoms, op_selector, calc, traj_out):
     new_atoms = atoms
     new_atoms.info['data'] = {'tag': None}
     new_atoms.info['confid'] = 1
-    # prob, operations = list_operations
-    # n_ops = np.random.geometric(0.35, size=1).item()+len(operations)
-    
     operation = op_selector.get_operator()
     new_atoms, _ = operation.get_new_individual([new_atoms])
-    #new_atoms.info['data'] = {'tag': None}
-    #new_atoms.info['confid'] = 1        
-    #new_atoms.set_constraint(fix_indices)
     new_atoms = relax(new_atoms, calc)
-     
     potential_diff = new_atoms.info['key_value_pairs']['raw_score'] - atoms.info['key_value_pairs']['raw_score']
+    
     if _acceptance_condition(potential_diff):
         lowest_energy = new_atoms.info['key_value_pairs']['raw_score']
         atoms = new_atoms
@@ -81,9 +77,7 @@ def trial_step(atoms, op_selector, calc, traj_out):
         traj_out.write(atoms)
     return atoms, lowest_energy
 
-def run(atoms, steps, operator, calc):
-    traj_out = TrajectoryWriter(f'opt_run_Ag305Pd100_H_EMT.traj')
-    
+def run(atoms, steps, operator, calc, traj_out):
     for i in range(steps):
         atoms, energy_step = trial_step(atoms, operator, calc, traj_out)
 
@@ -91,9 +85,7 @@ def run(atoms, steps, operator, calc):
             print(f'Step : {i}, Energy : {energy_step}')
 
 no_improvements = 0
-#calculator = EMT() #OCPCalculator(checkpoint_path="/work/g15farris/ocp_pot/painn_h512_s2ef_all.pt")
-
-atoms = read('../../bare_nps/xyz/Ag305Pd100.xyz')
+atoms = read('../../bare_nps/xyz/Ag300Pd105_LEH.xyz')
         
 atoms = Atoms(positions=atoms.positions, symbols=atoms.symbols)
 atoms.center(5)
@@ -108,15 +100,11 @@ atoms.info['confid'] = 1
 
 species = ['H']
 sas = ClusterAdsorptionSites(atoms, composition_effect=False)
-soclist = ([1,1,1,1,1,1],
+soclist = ([1,1,1,1],
         [Rich2poorPermutation(elements=['Ag', 'Pd'], num_muts=1),
         Poor2richPermutation(elements=['Ag', 'Pd'], num_muts=1),
         RandomPermutation(elements=['Ag', 'Pd'], num_muts=1),
-        MoveAdsorbate(species, adsorption_sites=sas, num_muts=1),
-        MoveAdsorbate(species, adsorption_sites=sas, num_muts=2),
-        MoveAdsorbate(species, adsorption_sites=sas, num_muts=3),
-        #SimpleCutSpliceCrossoverWithAdsorbates(species, keep_composition=True,
-        #                                       adsorption_sites=sas),
+        MoveAdsorbate(species, adsorption_sites=sas, num_muts=1)
         ])
 op_selector = OperationSelector(*soclist)
 
@@ -126,10 +114,9 @@ atoms.calc = calculator
 opt = BFGS(atoms, logfile=None)
 opt.run(fmax=0.03)
 # references = {'O2' : 5.940566, 'NP' : atoms.get_potential_energy()}
-    
-
 
 relax(atoms, calculator)
 #fix_indices = FixAtoms(indices=[atom.index for atom in atoms if atom.symbol in ['Ag', 'Zn']])
 #atoms.set_constraint(fix_indices)
-run(atoms, 20000, op_selector, calculator)
+traj_out = TrajectoryWriter(f'opt_run_Ag305Pd100_H_MACEGPU1.traj')
+run(atoms, 20000, op_selector, calculator, traj_out)

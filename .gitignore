@@ -1,1 +1,3 @@
 *.traj
+*err
+*out
